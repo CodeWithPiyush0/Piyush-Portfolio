@@ -58,8 +58,10 @@
       <p class="hero__hint">← drag the seam</p>
     </div>
 
-    <!-- DESIGN layer (the Figma canvas) — same geometry, wireframe skin -->
-    <div class="hero__layer layer--design" aria-hidden="true">
+    <!-- DESIGN layer (the Figma canvas) — same geometry, wireframe skin.
+         `inert` = never interactive/focusable: it's a picture of a file,
+         and its duplicate links must not steal clicks from the live layer. -->
+    <div class="hero__layer layer--design" aria-hidden="true" inert>
       <header class="hero__nav wire-frame" data-layer="Frame · nav">
         <a class="nav__logo" href="#">PK</a>
         <nav class="nav__links">
@@ -346,5 +348,6 @@
   <script src="js/seam.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script src="js/confetti.js" defer></script>
+  <script src="js/placeholders.js" defer></script>
 </body>
 </html>

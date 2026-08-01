@@ -151,7 +151,12 @@
 
 /* ---------- DESIGN skin (Figma canvas) ---------- */
 
-.layer--design { color: var(--wire-text); }
+.layer--design {
+  color: var(--wire-text);
+  /* the canvas is a picture, never a click target — clicks fall through to
+     the live layer beneath (fallback for browsers without `inert`) */
+  pointer-events: none;
+}
 
 .layer--design .hero__title { color: var(--wire-text); }
 .layer--design .hero__tag,

@@ -137,7 +137,8 @@ filenames, section frame-labels) is mono, small, and often uppercase.
 | Spec tooltip | 0.18s opacity + 4px rise |
 | Seam grip hover/drag | scale 1.12, 0.15s |
 | Scroll reveal (`[data-reveal]`) | opacity 0→1 + 24px rise, 0.6s ease, staggered by markup order (0.08s steps via `--d`) |
-| Confetti toy | WAAPI, ~50 particles, 700–1400ms, physics-ish fall + spin |
+| Confetti toy | WAAPI, 36 particles, 700–1400ms, physics-ish fall + spin |
+| Placeholder-link refusal | WAAPI shake: x 0 → −6 → 5 → −3 → 0 px, 300ms ease-out |
 
 Rules: animate only `transform`/`opacity`/`clip-path` (compositor-friendly —
 lesson carried over from the game project). Everything must respect

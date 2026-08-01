@@ -90,7 +90,8 @@ Portfolio_2026/
 ├── js/                 # one file per feature, all loaded with defer, no globals shared
 │   ├── seam.js         # hero seam drag (drives --seam CSS var)
 │   ├── reveal.js       # IntersectionObserver scroll-reveal for [data-reveal]
-│   └── confetti.js     # Playground confetti-button toy
+│   ├── confetti.js     # Playground confetti-button toy
+│   └── placeholders.js # a[href="#"] links: preventDefault + refusal shake
 └── assets/             # images, resume PDF, (later: self-hosted fonts, game)
 ```
 
@@ -127,6 +128,18 @@ Portfolio_2026/
   slowly — text must flow continuously across it.
 - The design layer is duplicate markup (kept in sync BY HAND in index.html —
   edit both copies).
+- ⚠️ The design layer has **`inert`** (HTML attribute) + `pointer-events: none`
+  (CSS fallback) — it sits ON TOP of the live layer, and without this its
+  duplicate links steal every click left of the seam (this bug shipped once).
+  Any new element added to the design layer must never be interactive.
+- **The seam is HERO-ONLY — intentional.** A full-page draggable seam would
+  make every section double-markup (2× maintenance), hurt performance, and
+  turn a wink into a gimmick. The concept echoes elsewhere instead: work-row
+  hover dot-grid, Playground canvas background, About's static split line,
+  section frame-labels, spec tooltips.
+- Placeholder links (`href="#"`) don't dead-jump to the top: `placeholders.js`
+  intercepts them with a refusal shake. Giving a link a real href opts it out
+  automatically.
 
 ## 6. Page sections (index.html, in order)
 
