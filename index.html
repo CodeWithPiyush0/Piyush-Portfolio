@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piyush Kumar — Designer × Developer</title>
+  <meta name="description" content="UI/UX designer and frontend developer. I design interfaces in Figma, then build them in code — educational games, dashboards, and product interfaces." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/work.css" />
+  <link rel="stylesheet" href="css/playground.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HERO — "The Seam"
+       Two identical layers of the same hero:
+         .layer--live   = the real, polished site (base, right of seam)
+         .layer--design = the Figma-canvas view (clipped, left of seam)
+       The seam position is the CSS var --seam (0% – 100%), set by js/seam.js
+       ============================================================ -->
+  <section class="hero" id="seam-stage" style="--seam: 0%">
+
+    <!-- LIVE layer (the shipped site) -->
+    <div class="hero__layer layer--live">
+      <header class="hero__nav">
+        <a class="nav__logo" href="#">PK</a>
+        <nav class="nav__links">
+          <a href="#work">Work</a>
+          <a href="#playground">Playground</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn--small" href="#">Resume ↗</a>
+      </header>
+
+      <div class="hero__inner">
+        <p class="badge"><span class="badge__dot"></span>Open to new roles</p>
+        <h1 class="hero__title">Piyush Kumar</h1>
+        <p class="hero__tag">Designer who ships. Developer who designs.</p>
+        <p class="hero__sub">
+          I design interfaces in Figma — then build them, pixel-for-pixel, in code.
+          Educational games for K–12 learners, dashboards, and product interfaces.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#work" data-spec="padding 14 × 28 · radius 999 · #0D99FF">View work</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <p class="hero__hint">← drag the seam</p>
+    </div>
+
+    <!-- DESIGN layer (the Figma canvas) — same geometry, wireframe skin -->
+    <div class="hero__layer layer--design" aria-hidden="true">
+      <header class="hero__nav wire-frame" data-layer="Frame · nav">
+        <a class="nav__logo" href="#">PK</a>
+        <nav class="nav__links">
+          <a href="#">Work</a>
+          <a href="#">Playground</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <a class="btn btn--small" href="#">Resume ↗</a>
+      </header>
+
+      <div class="hero__inner">
+        <p class="badge wire-frame" data-layer="Component · badge/available"><span class="badge__dot"></span>Open to new roles</p>
+
+        <div class="sel" data-layer="Text · display/h1">
+          <h1 class="hero__title">Piyush Kumar</h1>
+          <i class="sel__h sel__h--tl"></i><i class="sel__h sel__h--tr"></i>
+          <i class="sel__h sel__h--bl"></i><i class="sel__h sel__h--br"></i>
+          <span class="sel__dims">Auto × 96</span>
+        </div>
+
+        <p class="hero__tag">Designer who ships. Developer who designs.</p>
+
+        <div class="redline"><span>32</span></div>
+
+        <p class="hero__sub">
+          I design interfaces in Figma — then build them, pixel-for-pixel, in code.
+          Educational games for K–12 learners, dashboards, and product interfaces.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#">View work</a>
+          <a class="btn btn--ghost" href="#">Get in touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- The seam -->
+    <div class="seam" id="seam-handle" role="slider" tabindex="0"
+         aria-label="Drag to reveal the design layer"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="seam__tag seam__tag--left">hero.fig</span>
+      <span class="seam__tag seam__tag--right">hero.html</span>
+      <span class="seam__grip">‹ ›</span>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       WORK — selected case studies
+       Rows link to future case-study pages (hrefs are placeholders).
+       Copy drafted from the old portfolio — to be rewritten in
+       build-log voice. NDA: K-12 game work stays anonymized.
+       ============================================================ -->
+  <section class="section work" id="work">
+    <div class="section__inner">
+      <p class="section__label" data-reveal>Frame 02 · Selected Work</p>
+      <h2 class="section__title" data-reveal="1">Work</h2>
+      <p class="section__intro" data-reveal="2">
+        Projects where I owned both sides of the seam — from the first frame
+        in Figma to the code that shipped.
+      </p>
+
+      <div class="work__list">
+        <a class="work-row" href="#" data-reveal>
+          <span class="work-row__index">01</span>
+          <span>
+            <span class="work-row__title">Game-Based Learning for K–12</span>
+            <span class="work-row__desc">
+              Interactive learning games played by school kids — curriculum
+              concepts turned into mechanics, designed in Figma, built in
+              vanilla JS, responsive from phone to smartboard.
+            </span>
+            <span class="work-row__tags">
+              <span class="work-tag">Design → Code</span>
+              <span class="work-tag">EdTech</span>
+              <span class="work-tag">HTML · CSS · JS</span>
+              <span class="work-tag work-tag--nda">client work · anonymized</span>
+            </span>
+          </span>
+          <span class="work-row__arrow">→</span>
+        </a>
+
+        <a class="work-row" href="#" data-reveal>
+          <span class="work-row__index">02</span>
+          <span>
+            <span class="work-row__title">FinTrack</span>
+            <span class="work-row__desc">
+              A personal finance dashboard born from my own budgeting
+              friction — designed end-to-end, then built as a full MERN
+              application with interactive spending insights.
+            </span>
+            <span class="work-row__tags">
+              <span class="work-tag">Design → Code</span>
+              <span class="work-tag">FinTech</span>
+              <span class="work-tag">React · Node · MongoDB</span>
+            </span>
+          </span>
+          <span class="work-row__arrow">→</span>
+        </a>
+
+        <a class="work-row" href="#" data-reveal>
+          <span class="work-row__index">03</span>
+          <span>
+            <span class="work-row__title">ExaltRide</span>
+            <span class="work-row__desc">
+              E-commerce ecosystem for an early-stage car accessories
+              platform — mobile-first storefront plus high-density vendor
+              and admin panels, with an atomic design system underneath.
+            </span>
+            <span class="work-row__tags">
+              <span class="work-tag">Design</span>
+              <span class="work-tag">E-commerce</span>
+              <span class="work-tag">Design System</span>
+            </span>
+          </span>
+          <span class="work-row__arrow">→</span>
+        </a>
+
+        <a class="work-row" href="#" data-reveal>
+          <span class="work-row__index">04</span>
+          <span>
+            <span class="work-row__title">OneBanc — Wealth Concierge</span>
+            <span class="work-row__desc">
+              Premium wealth-management experience for high-net-worth users.
+              Started as a 48-hour challenge; expanded into a full product
+              exploration of exclusivity cues and progressive disclosure.
+            </span>
+            <span class="work-row__tags">
+              <span class="work-tag">Design</span>
+              <span class="work-tag">FinTech</span>
+              <span class="work-tag">UX Challenge</span>
+            </span>
+          </span>
+          <span class="work-row__arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLAYGROUND — game-feel lives here
+       Big tile = slot for the original demo game (from scratch,
+       NDA-safe). Confetti tile = working toy (js/confetti.js).
+       ============================================================ -->
+  <section class="section playground" id="playground">
+    <div class="section__inner">
+      <p class="section__label" data-reveal>Frame 03 · Playground</p>
+      <h2 class="section__title" data-reveal="1">Playground</h2>
+      <p class="section__intro" data-reveal="2">
+        Where I test game feel, motion, and interaction ideas.
+        Everything here is built with plain HTML, CSS and JS — view source.
+      </p>
+
+      <div class="playground__grid">
+        <div class="pg-tile pg-tile--game" data-reveal>
+          <span class="pg-tile__label">playground / demo-game.html</span>
+          <span class="pg-tile__badge">in production</span>
+          <div class="pg-play">▶</div>
+          <h3 class="pg-tile__title">An original learning game — playable here soon</h3>
+          <p class="pg-tile__note">
+            A small educational game for kids, built from scratch for this
+            portfolio — every mechanic, sprite and line of code my own.
+          </p>
+        </div>
+
+        <div class="pg-tile pg-tile--confetti" data-reveal="1">
+          <span class="pg-tile__label">playground / confetti.js</span>
+          <button class="confetti-btn" id="confetti-btn">Do not press</button>
+          <p class="pg-tile__note">36 particles · WAAPI · zero libraries</p>
+        </div>
+
+        <div class="pg-tile pg-tile--soon" data-reveal="2" aria-label="More experiments coming soon">
+          <span class="pg-tile__label">playground / next…</span>
+          <span class="pg-skeleton pg-skeleton--w80"></span>
+          <span class="pg-skeleton pg-skeleton--w60"></span>
+          <span class="pg-skeleton pg-skeleton--w40"></span>
+          <p class="pg-tile__note">more experiments loading…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT — bio + the design/code split + history
+       ⚠️ dates & titles are UNCONFIRMED placeholders — see context.md §7
+       ============================================================ -->
+  <section class="section about" id="about">
+    <div class="section__inner">
+      <p class="section__label" data-reveal>Frame 04 · About</p>
+      <h2 class="section__title" data-reveal="1">About</h2>
+
+      <p class="about__bio" data-reveal="2">
+        I'm Piyush — a designer-developer from Muzaffarpur, India. I spend my
+        days on both sides of the same screen: drawing interfaces in Figma,
+        then building them in code. <em>Owning both sides removes the
+        design-to-dev gap entirely.</em>
+      </p>
+
+      <div class="about__split">
+        <div class="skill-col" data-reveal>
+          <p class="skill-col__label">left of the seam</p>
+          <h3 class="skill-col__title">Design</h3>
+          <ul>
+            <li>UI &amp; interaction design — Figma, auto layout, variants, prototyping</li>
+            <li>Design systems — tokens, atomic components, documentation</li>
+            <li>Game design for young learners — mechanics, feedback, guided flows</li>
+            <li>UX foundations — flows, information architecture, usability checks</li>
+            <li>Developer handoff that developers actually thank you for</li>
+          </ul>
+        </div>
+        <div class="skill-col" data-reveal="1">
+          <p class="skill-col__label">right of the seam</p>
+          <h3 class="skill-col__title">Code</h3>
+          <ul>
+            <li>Semantic HTML, hand-written CSS, vanilla JavaScript</li>
+            <li>Responsive, animation-heavy interfaces — 60fps or it doesn't ship</li>
+            <li>React &amp; the MERN stack — components, REST APIs, MongoDB</li>
+            <li>Pixel-accurate Figma-to-code builds across devices</li>
+            <li>This site: no framework, no build step — view source</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about__history">
+        <div data-reveal>
+          <h3 class="history__heading">Experience</h3>
+          <div class="history-item">
+            <p class="history-item__role">Software Design Engineer — UX/UI</p>
+            <p class="history-item__meta">Direction Educare · educational games for K–12</p>
+            <p class="history-item__dates">Apr 2026 — present</p>
+          </div>
+          <div class="history-item">
+            <p class="history-item__role">UI/UX Designer</p>
+            <p class="history-item__meta">CeroED Technologies</p>
+            <p class="history-item__dates">Jan 2026 — Mar 2026</p>
+          </div>
+        </div>
+        <div data-reveal="1">
+          <h3 class="history__heading">Education</h3>
+          <div class="history-item">
+            <p class="history-item__role">Master of Computer Applications</p>
+            <p class="history-item__meta">Chandigarh University</p>
+          </div>
+          <div class="history-item">
+            <p class="history-item__role">Bachelor of Computer Applications</p>
+            <p class="history-item__meta">Nitishwar College, Muzaffarpur</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT + footer
+       ⚠️ email + social links are placeholders — see context.md §7
+       ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="section__inner">
+      <p class="section__label" data-reveal>Frame 05 · Contact</p>
+      <h2 class="contact__title" data-reveal="1">Let's build<br />something.</h2>
+      <p class="contact__sub" data-reveal="2">
+        Open to product designer, design engineer and frontend roles —
+        full-time or freelance. If it lives between design and code,
+        I'm interested.
+      </p>
+      <div class="contact__actions" data-reveal="3">
+        <a class="btn btn--primary" href="mailto:hello@example.com"
+           data-spec="mailto · replace with real address">Say hello</a>
+        <a class="btn btn--ghost" href="#">Resume ↗</a>
+      </div>
+      <div class="contact__links" data-reveal="4">
+        <a href="#">linkedin ↗</a>
+        <a href="#">github ↗</a>
+        <a href="#">old portfolio ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Piyush Kumar — designed &amp; built by hand.</p>
+    <p class="footer__mono">no frameworks · no templates · view source</p>
+  </footer>
+
+  <script src="js/seam.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/confetti.js" defer></script>
+</body>
+</html>

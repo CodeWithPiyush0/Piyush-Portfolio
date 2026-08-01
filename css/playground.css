@@ -1,0 +1,148 @@
+/* ============================================================
+   playground.css — Playground (#playground)
+   The one section where playfulness runs loose. Sits on the
+   design-canvas background (dot grid) — this section lives
+   "inside the file".
+   ============================================================ */
+
+.playground {
+  background-color: var(--canvas);
+  background-image: radial-gradient(var(--canvas-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.playground__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.pg-tile {
+  position: relative;
+  border-radius: 16px;
+  padding: 32px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.pg-tile__label {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--wire-text);
+}
+
+.pg-tile__title {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.pg-tile__note {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+  margin-top: 10px;
+  max-width: 440px;
+}
+
+/* -- big tile: the future demo game -- */
+.pg-tile--game {
+  grid-column: span 2;
+  background: var(--paper);
+  border: 1.5px dashed var(--accent);
+}
+
+.pg-tile--game .pg-play {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px; /* optical centering of ▶ */
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(13, 153, 255, 0.4);
+}
+
+.pg-tile__badge {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px dashed var(--accent);
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+/* -- confetti toy tile -- */
+.pg-tile--confetti {
+  background: var(--ink);
+  color: var(--paper);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.pg-tile--confetti .pg-tile__label { color: rgba(250, 248, 243, 0.5); }
+.pg-tile--confetti .pg-tile__note  { color: rgba(250, 248, 243, 0.6); }
+
+.confetti-btn {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  transition: transform 0.12s ease;
+}
+.confetti-btn:hover  { transform: scale(1.05); }
+.confetti-btn:active { transform: scale(0.92); }
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+
+/* -- wireframe placeholder tile -- */
+.pg-tile--soon {
+  border: 1px dashed var(--wire);
+  justify-content: center;
+  gap: 14px;
+}
+
+.pg-skeleton {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--wire);
+  opacity: 0.4;
+}
+.pg-skeleton--w60 { width: 60%; }
+.pg-skeleton--w80 { width: 80%; }
+.pg-skeleton--w40 { width: 40%; }
+
+.pg-tile--soon .pg-tile__note {
+  color: var(--wire-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .playground__grid { grid-template-columns: 1fr; }
+  .pg-tile--game { grid-column: auto; }
+}

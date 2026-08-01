@@ -1,0 +1,100 @@
+/* ============================================================
+   work.css — Selected Work (#work)
+   Case-study rows, no thumbnails yet. Hover reveals the dot-grid
+   canvas behind the row — the design layer peeking through the paper.
+   ============================================================ */
+
+.work__list {
+  margin-top: 64px;
+  border-bottom: 1px solid rgba(27, 24, 19, 0.12);
+}
+
+.work-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 40px 8px;
+  border-top: 1px solid rgba(27, 24, 19, 0.12);
+  transition: padding 0.25s ease;
+}
+
+/* dot-grid canvas fades in behind the hovered row */
+.work-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--canvas-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.work-row:hover::before { opacity: 0.55; }
+
+.work-row__index {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  padding-top: 6px;
+}
+
+.work-row__title {
+  display: block;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+.work-row:hover .work-row__title { color: var(--accent); }
+
+.work-row__desc {
+  display: block;
+  color: var(--muted);
+  font-size: clamp(14px, 1.3vw, 17px);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-top: 10px;
+}
+
+.work-row__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.work-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border: 1px solid rgba(27, 24, 19, 0.18);
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+.work-tag--nda {
+  border-style: dashed;
+  border-color: var(--wire);
+}
+
+.work-row__arrow {
+  font-size: 24px;
+  color: var(--muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  align-self: center;
+}
+.work-row:hover .work-row__arrow {
+  transform: translateX(8px);
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .work-row {
+    grid-template-columns: 1fr auto;
+    padding: 32px 4px;
+  }
+  .work-row__index { display: none; }
+}

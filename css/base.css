@@ -1,0 +1,157 @@
+/* ============================================================
+   base.css — design tokens, reset, shared primitives
+   Change the look of the whole site from here.
+   ============================================================ */
+
+:root {
+  /* -- color: live side (the shipped site) -- */
+  --paper:      #FAF8F3;   /* page background */
+  --ink:        #1B1813;   /* primary text */
+  --muted:      #6E675C;   /* secondary text */
+  --accent:     #0D99FF;   /* the one accent — Figma selection blue */
+
+  /* -- color: design side (the Figma canvas) -- */
+  --canvas:     #F2F0EA;   /* canvas background */
+  --canvas-dot: #CFCAC0;   /* dot grid */
+  --wire:       #B7B1A5;   /* wireframe borders */
+  --wire-text:  #8D867A;   /* wireframe (muted) text */
+
+  /* -- type -- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* -- rhythm -- */
+  --nav-h: 76px;
+  --edge: clamp(20px, 5vw, 72px);   /* page side padding */
+}
+
+/* -- reset -- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; background: none; border: 0; cursor: pointer; }
+
+/* -- shared primitives -- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 153, 255, 0.35);
+}
+
+.btn--ghost {
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+.btn--ghost:hover { transform: translateY(-2px); }
+
+.btn--small {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1.5px solid var(--ink);
+}
+
+/* -- spec tooltip: any element with data-spec documents itself on hover -- */
+[data-spec] { position: relative; }
+[data-spec]::after {
+  content: attr(data-spec);
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  background: var(--ink);
+  color: #fff;
+  padding: 7px 11px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 5;
+}
+[data-spec]:hover::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* -- section shell -- */
+.section {
+  padding: 120px var(--edge);
+}
+
+.section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section__label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.section__title {
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.section__intro {
+  color: var(--muted);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.6;
+  max-width: 560px;
+  margin-top: 20px;
+}
+
+/* -- scroll reveal (js/reveal.js adds .js to <html>, then .is-in per element) -- */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease var(--d, 0s), transform 0.6s ease var(--d, 0s);
+}
+.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
