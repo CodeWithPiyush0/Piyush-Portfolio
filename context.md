@@ -164,31 +164,49 @@ Portfolio_2026/
    LinkedIn/GitHub links, resume. Footer: "Designed & built by hand — no
    frameworks, no templates."
 
-## 7. Copy status — ⚠️ mostly PLACEHOLDER
+## 7. Copy & data status
 
-- Hero headline/tagline/sub: draft, to be workshopped with Piyush.
-- Work row descriptions: drafted from old portfolio content; rewrite in
-  "build-log" voice (real decisions/trade-offs, first person) for case pages.
-- About bio, experience dates: **UNCONFIRMED** — old portfolio says
-  "Software Design Engineer - UX/UI"; NDA says title "Figma Designer";
-  a "Jan 2026 - Mar 2026" range appeared in the old bundle (CeroED?).
-  Confirm all dates/titles with Piyush before launch.
-- Contact email is a placeholder (`hello@piyushkumar.design` is NOT real).
-  Socials link to `#`. Resume PDF not yet in assets/.
+CONFIRMED (by Piyush, Aug 2026):
+- Experience: Direction Educare (Software Design Engineer — UX/UI,
+  Apr 2026 – present) · ExaltRide (UI/UX Designer, Jan 2026 – Mar 2026) ·
+  CeroED Technologies (UI/UX Designer, Aug 2025 – Oct 2025).
+- Email: piyush0codes@gmail.com ·
+  LinkedIn: linkedin.com/in/piyush-kumar-9b9618289 ·
+  GitHub: github.com/CodeWithPiyush0
+- Resume: `assets/Piyush_Kumar_UX_Resume.pdf` (⚠️ mixed-case filename —
+  always reference with exact case; deployed host is case-sensitive).
+- Deployed on Vercel (Aug 2026).
+
+STILL DRAFT (mine, to workshop with Piyush):
+- Hero headline/tagline/sub, About bio.
+- Work row descriptions — rewrite in "build-log" voice for case pages.
+- ⚠️ ExaltRide title "UI/UX Designer" is my guess — confirm.
 
 ## 8. Roadmap / open TODOs
 
-- [ ] Approve full-page design → iterate on feel with Piyush
-- [ ] Real copy everywhere (kill placeholders, confirm dates/titles/email)
+- [x] Real contact/email/social links + resume PDF wired (Aug 2026)
+- [x] Favicon: `assets/favicon.svg` (the seam motif: canvas left / ink right /
+      blue seam + grip) + `favicon-32.png` + `apple-touch-icon.png` (rendered
+      from the SVG at 512px via headless Chrome — it ignores window sizes
+      below ~500px! — then downscaled with PowerShell System.Drawing)
+- [x] Basic OG meta tags (og:image with a real preview picture still TODO)
+- [x] Deployed to Vercel
+- [x] Responsive pass: mobile (390) + tablet (768) verified via screenshots.
+      Breakpoints: 640 (nav links hide, seam tag hides), 720 (work rows lose
+      index), 800 (about stacks), 900 (playground stacks). Section padding is
+      fluid clamp(72px,14vw,120px); seam hit-area widens on coarse pointers.
+      ⚠️ Headless can't render <500px windows — capture mobile via a 390px
+      IFRAME wrapper page (see scratchpad technique) or test on a real phone.
+- [ ] Hero copy + bio: workshop real voice with Piyush
 - [ ] Case-study pages (separate HTML files, build-log format)
 - [ ] **Original demo game** for the Playground (from scratch, NDA-safe;
       subject TBD — avoid robots/batteries/number-splitting)
 - [ ] Real project thumbnails/artifacts for Work rows
-- [ ] Self-host fonts; add favicon + OG meta tags + social preview image
-- [ ] Resume PDF in assets/
+- [ ] og:image social preview picture (1200×630)
+- [ ] Self-host fonts
 - [ ] Sticky/return nav decision
-- [ ] Deploy (Vercel, keep or replace old URL) — remember lowercase asset
-      paths (Linux servers are case-sensitive; bit us on the game project)
+- [ ] 404 page ("unmerged branch")
+- [ ] Real-device QA (iOS Safari especially — seam drag, 100dvh)
 
 ## 9. Verification workflow — use `?static`
 

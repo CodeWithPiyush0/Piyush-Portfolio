@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- The Seam: design canvas (left) / shipped ink (right), blue seam + grip -->
+  <defs>
+    <clipPath id="r"><rect width="64" height="64" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="64" height="64" fill="#F2F0EA"/>
+    <g fill="#C5BFB4">
+      <circle cx="8" cy="8" r="1.7"/><circle cx="18" cy="8" r="1.7"/>
+      <circle cx="8" cy="18" r="1.7"/><circle cx="18" cy="18" r="1.7"/>
+      <circle cx="8" cy="28" r="1.7"/><circle cx="18" cy="28" r="1.7"/>
+      <circle cx="8" cy="38" r="1.7"/><circle cx="18" cy="38" r="1.7"/>
+      <circle cx="8" cy="48" r="1.7"/><circle cx="18" cy="48" r="1.7"/>
+      <circle cx="8" cy="58" r="1.7"/><circle cx="18" cy="58" r="1.7"/>
+    </g>
+    <rect x="26" width="38" height="64" fill="#1B1813"/>
+    <rect x="24" width="3.5" height="64" fill="#0D99FF"/>
+    <circle cx="25.75" cy="32" r="8.5" fill="#0D99FF"/>
+    <path d="M22.5 32h6.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

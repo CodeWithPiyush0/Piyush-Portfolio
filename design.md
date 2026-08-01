@@ -146,7 +146,29 @@ lesson carried over from the game project). Everything must respect
 motion is JS-driven; also forces `scroll-behavior: auto`). `?static` in the
 URL disables all entrance motion (screenshot/test mode — see context.md §9).
 
-## 8. Voice & copy
+## 8. Favicon / brand mark
+
+`assets/favicon.svg` — the seam motif as an icon: rounded square (rx 14/64),
+left = canvas `#F2F0EA` with a 2-col dot grid, right = ink `#1B1813`, split by
+the accent-blue seam (3.5/64 wide) with the round grip (r 8.5/64) and a white
+horizontal dash. PNG fallbacks: `favicon-32.png`, `apple-touch-icon.png`
+(180px). Regenerate from the SVG if colors ever change.
+
+## 9. Breakpoints
+
+| Width | Change |
+|---|---|
+| ≤ 900px | Playground grid stacks to 1 column |
+| ≤ 800px | About split stacks (seam line becomes a horizontal rule); history stacks |
+| ≤ 720px | Work rows drop the index column |
+| ≤ 640px | Nav links hide (logo + Resume only); `hero.fig` seam tag hides |
+| pointer: coarse | Seam hit-area widens to ±28px |
+
+Section padding is fluid: `clamp(72px, 14vw, 120px)`. Everything else scales
+via clamp()/percentages — avoid adding fixed-px breakpoint overrides unless a
+layout genuinely breaks.
+
+## 10. Voice & copy
 
 - First person, concrete, decision-focused ("I rebuilt the drag system three
   times" not "passionate about user-centric solutions").

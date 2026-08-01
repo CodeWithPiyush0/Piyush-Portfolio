@@ -108,7 +108,7 @@ button { font: inherit; background: none; border: 0; cursor: pointer; }
 
 /* -- section shell -- */
 .section {
-  padding: 120px var(--edge);
+  padding: clamp(72px, 14vw, 120px) var(--edge);
 }
 
 .section__inner {

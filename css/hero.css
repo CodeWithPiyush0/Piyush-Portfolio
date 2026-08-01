@@ -286,11 +286,14 @@
   z-index: 10;
 }
 
-/* wider invisible hit area */
+/* wider invisible hit area (extra generous for thumbs) */
 .seam::before {
   content: "";
   position: absolute;
   inset: 0 -16px;
+}
+@media (pointer: coarse) {
+  .seam::before { inset: 0 -28px; }
 }
 
 .seam__grip {
