@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game-Based Learning for K–12 — Piyush Kumar</title>
+  <meta name="description" content="Case study: designing and building interactive learning games for K–12 — from curriculum concept to production vanilla-JS builds." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/work.css" />
+  <link rel="stylesheet" href="../css/case.css" />
+</head>
+<body>
+
+  <header class="case-nav">
+    <a class="case-nav__back" href="../index.html#work">← back to work</a>
+    <a class="nav__logo" href="../index.html">PK</a>
+    <a class="btn btn--small" href="../assets/Piyush_Kumar_UX_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+  </header>
+
+  <main class="case">
+    <div class="case__inner">
+      <p class="section__label">Case Study · 01</p>
+      <h1 class="case__title">Game-Based Learning for K–12</h1>
+      <p class="case__subtitle">Curriculum concepts turned into playable browser games — designed in Figma, built in vanilla JS, shipped to real classrooms.</p>
+
+      <div class="case__tags">
+        <span class="work-tag">EdTech</span>
+        <span class="work-tag">Design → Code</span>
+        <span class="work-tag">Game UI</span>
+        <span class="work-tag work-tag--nda">client work · anonymized</span>
+      </div>
+
+      <dl class="case__meta">
+        <div><dt>Role</dt><dd>UI/UX Designer &amp; Developer</dd></div>
+        <div><dt>Duration</dt><dd>Apr 2026 — present</dd></div>
+        <div><dt>Platform</dt><dd>Browser · HTML / CSS / JS</dd></div>
+        <div><dt>Employer</dt><dd>Direction Educare</dd></div>
+      </dl>
+
+      <p class="case__note">
+        <strong>A note on what you'll see here.</strong> These games are built for a
+        client and protected by an NDA — so this page shows my role, process, and
+        craft rather than client screens or assets. An <strong>original demo game,
+        built from scratch on my own time</strong>, is in production for this site's
+        Playground so you can experience the work first-hand.
+      </p>
+
+      <section class="case__section">
+        <h2>Overview</h2>
+        <p>
+          I own the full lifecycle of interactive learning games for K–12
+          students: taking a curriculum concept, turning it into a game
+          mechanic a child actually wants to play, designing every screen and
+          state in Figma, and then building the whole thing myself in vanilla
+          HTML, CSS and JavaScript as a production-ready module, working
+          within a cross-functional POD team.
+        </p>
+        <p>
+          Because I'm both the designer and the developer, there is no handoff
+          gap — the drag physics, the reward timing, the way a hint appears
+          when a child hesitates: what I design is exactly what ships.
+        </p>
+      </section>
+
+      <div class="case__duo">
+        <div class="case-block case-block--problem">
+          <h3>The problem</h3>
+          <p>
+            Traditional learning content struggles to hold a young learner's
+            attention. Each module has to teach a real curriculum concept while
+            feeling like pure play — which means mechanics, difficulty pacing
+            and feedback loops must be designed around how children actually
+            learn. And it all has to run smoothly in the browser on whatever
+            device a school has: low-end phones, shared tablets, smartboards.
+          </p>
+        </div>
+        <div class="case-block case-block--solution">
+          <h3>The approach</h3>
+          <p>
+            Learning-first and end-to-end. The concept drives the mechanic —
+            never the other way around. I prototype flows in Figma, test the
+            interaction feel early, then build in dependency-free vanilla JS
+            (chosen for lightweight builds that load fast on weak school
+            connections). One person owning design and code means every detail
+            survives to production.
+          </p>
+        </div>
+      </div>
+
+      <section class="case__section">
+        <h2>How I work</h2>
+        <div class="case__cards">
+          <div class="case-card">
+            <span class="case-card__num">01</span>
+            <h3>Learning-first design</h3>
+            <p>Translating curriculum concepts into game mechanics, user flows
+            and interaction models suited to young learners — the lesson is
+            the game, not a quiz bolted onto one.</p>
+          </div>
+          <div class="case-card">
+            <span class="case-card__num">02</span>
+            <h3>Game UI &amp; feedback systems</h3>
+            <p>High-fidelity game visuals, storybook assets, reward loops, and
+            layered guidance — demonstration hints, idle nudges, and mistake
+            recovery for kids who get stuck, celebration moments for kids who
+            don't.</p>
+          </div>
+          <div class="case-card">
+            <span class="case-card__num">03</span>
+            <h3>Build &amp; ship</h3>
+            <p>Production builds in vanilla HTML, CSS and JavaScript —
+            responsive from phone to smartboard, tuned to stay smooth on
+            low-end hardware.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case__section">
+        <h2>Craft notes from the build side</h2>
+        <p>
+          A few engineering patterns this work drilled into me — the kind of
+          thing you only learn by shipping games to real classrooms:
+        </p>
+        <ul class="case__results" style="margin-top: 24px;">
+          <li>A fixed-aspect game stage that scales as one unit, with all
+              positions in relative units — responsiveness comes free instead
+              of being fought screen by screen.</li>
+          <li>Animate only what the compositor can handle (transform, opacity,
+              clip-path) — the difference between 60fps and a stuttering game
+              on a cheap tablet.</li>
+          <li>Drag-and-drop built on Pointer Events with capture, so mouse,
+              touch and stylus all behave identically.</li>
+          <li>Kids don't read instructions — guidance has to be shown, not
+              told: ghost demonstrations, inactivity nudges, and forgiving
+              mistake handling.</li>
+        </ul>
+      </section>
+
+      <section class="case__section">
+        <h2>What shipped</h2>
+        <ul class="case__results">
+          <li>2+ educational games and 6+ interactive learning modules for
+              K–12 learners, live in production</li>
+          <li>Every game developed end-to-end in vanilla HTML, CSS and
+              JavaScript — no frameworks, no build step</li>
+          <li>Game mechanics, interactions and feedback systems that
+              measurably improve learner engagement</li>
+          <li>Storybook assets, game visuals and interactive UI produced
+              alongside the code</li>
+        </ul>
+      </section>
+
+      <a class="case__next" href="fintrack.html">
+        <span class="case__next-label">next case study</span>
+        <span class="case__next-title">FinTrack — personal finance dashboard →</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Piyush Kumar — designed &amp; built by hand.</p>
+    <p class="footer__mono">no frameworks · no templates · view source</p>
+  </footer>
+
+</body>
+</html>

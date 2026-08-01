@@ -91,6 +91,31 @@
   color: var(--accent);
 }
 
+/* -- "also explored" mini-list -- */
+.work__more {
+  margin-top: 48px;
+}
+
+.work__more-heading {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.work__more-item {
+  color: var(--muted);
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.6;
+  padding: 10px 0;
+}
+.work__more-item strong { color: var(--ink); }
+.work__more-item a { transition: color 0.15s ease; }
+.work__more-item a:hover,
+.work__more-item a:hover strong { color: var(--accent); }
+
 @media (max-width: 720px) {
   .work-row {
     grid-template-columns: 1fr auto;

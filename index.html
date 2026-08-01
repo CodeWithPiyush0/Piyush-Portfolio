@@ -13,7 +13,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Piyush Kumar — Designer × Developer" />
   <meta property="og:description" content="I design interfaces in Figma, then build them in code. Educational games, dashboards, and product interfaces." />
-  <meta name="twitter:card" content="summary" />
+  <!-- ⚠️ TODO: og:image must be an ABSOLUTE https URL for LinkedIn/WhatsApp —
+       replace with https://<deployed-domain>/assets/og-image.png -->
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -134,14 +137,14 @@
       </p>
 
       <div class="work__list">
-        <a class="work-row" href="#" data-reveal>
+        <a class="work-row" href="work/k12-games.html" data-reveal>
           <span class="work-row__index">01</span>
           <span>
             <span class="work-row__title">Game-Based Learning for K–12</span>
             <span class="work-row__desc">
-              Interactive learning games played by school kids — curriculum
-              concepts turned into mechanics, designed in Figma, built in
-              vanilla JS, responsive from phone to smartboard.
+              2+ games and 6+ interactive learning modules shipped end-to-end —
+              curriculum concepts turned into game mechanics, designed in Figma,
+              built in vanilla JS, played by school kids on phones to smartboards.
             </span>
             <span class="work-row__tags">
               <span class="work-tag">Design → Code</span>
@@ -153,7 +156,7 @@
           <span class="work-row__arrow">→</span>
         </a>
 
-        <a class="work-row" href="#" data-reveal>
+        <a class="work-row" href="work/fintrack.html" data-reveal>
           <span class="work-row__index">02</span>
           <span>
             <span class="work-row__title">FinTrack</span>
@@ -171,14 +174,14 @@
           <span class="work-row__arrow">→</span>
         </a>
 
-        <a class="work-row" href="#" data-reveal>
+        <a class="work-row" href="work/exaltride.html" data-reveal>
           <span class="work-row__index">03</span>
           <span>
             <span class="work-row__title">ExaltRide</span>
             <span class="work-row__desc">
-              E-commerce ecosystem for an early-stage car accessories
-              platform — mobile-first storefront plus high-density vendor
-              and admin panels, with an atomic design system underneath.
+              30+ production screens across an e-commerce ecosystem — mobile-first
+              storefront plus high-density vendor and admin panels (13+ admin
+              modules, 8+ vendor features) on one scalable design system.
             </span>
             <span class="work-row__tags">
               <span class="work-tag">Design</span>
@@ -189,14 +192,14 @@
           <span class="work-row__arrow">→</span>
         </a>
 
-        <a class="work-row" href="#" data-reveal>
+        <a class="work-row" href="work/onebanc.html" data-reveal>
           <span class="work-row__index">04</span>
           <span>
             <span class="work-row__title">OneBanc — Wealth Concierge</span>
             <span class="work-row__desc">
-              Premium wealth-management experience for high-net-worth users.
-              Started as a 48-hour challenge; expanded into a full product
-              exploration of exclusivity cues and progressive disclosure.
+              Premium wealth-management experience for high-net-worth users —
+              a 1-week design sprint that produced 20+ reusable components and
+              a luxury visual language distinct from the neo-bank template.
             </span>
             <span class="work-row__tags">
               <span class="work-tag">Design</span>
@@ -206,6 +209,19 @@
           </span>
           <span class="work-row__arrow">→</span>
         </a>
+      </div>
+
+      <div class="work__more" data-reveal>
+        <h3 class="work__more-heading">Also explored</h3>
+        <p class="work__more-item">
+          <a href="https://www.figma.com/design/caz72Q9IaJObwbHk8xsn9q/Frenley-Assignment"
+             target="_blank" rel="noopener"><strong>Spark</strong> — premium dating experience:
+          freemium subscription flow + core social screens (Figma ↗)</a>
+        </p>
+        <p class="work__more-item">
+          <strong>WealthUp</strong> — gamified investing for first-time investors:
+          learn-to-earn onboarding, progressive disclosure, copy-trading — ask me about it
+        </p>
       </div>
     </div>
   </section>
@@ -266,8 +282,27 @@
         I'm Piyush — a designer-developer from Muzaffarpur, India. I spend my
         days on both sides of the same screen: drawing interfaces in Figma,
         then building them in code. <em>Owning both sides removes the
-        design-to-dev gap entirely.</em>
+        design-to-dev gap entirely</em> — what I design is exactly what ships.
       </p>
+
+      <div class="about__stats" data-reveal="3">
+        <div class="stat">
+          <span class="stat__num">2+</span>
+          <span class="stat__label">learning games shipped end-to-end</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">6+</span>
+          <span class="stat__label">interactive learning modules for K–12</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">30+</span>
+          <span class="stat__label">production screens across 3 platforms</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">30+</span>
+          <span class="stat__label">reusable design-system components</span>
+        </div>
+      </div>
 
       <div class="about__split">
         <div class="skill-col" data-reveal>
@@ -298,18 +333,21 @@
         <div data-reveal>
           <h3 class="history__heading">Experience</h3>
           <div class="history-item">
-            <p class="history-item__role">Software Design Engineer — UX/UI</p>
-            <p class="history-item__meta">Direction Educare · educational games for K–12</p>
+            <p class="history-item__role">UI/UX Designer &amp; Developer</p>
+            <p class="history-item__meta">Direction Educare · K–12 learning games, designed in Figma and
+              built in vanilla HTML/CSS/JS — mechanics, feedback systems, production code</p>
             <p class="history-item__dates">Apr 2026 — present</p>
           </div>
           <div class="history-item">
-            <p class="history-item__role">UI/UX Designer</p>
-            <p class="history-item__meta">ExaltRide · e-commerce web, vendor &amp; admin panels</p>
+            <p class="history-item__role">UI/UX Designer (Intern)</p>
+            <p class="history-item__meta">ExaltRide · 30+ production screens across storefront,
+              vendor &amp; admin panels; mobile-first consumer redesign</p>
             <p class="history-item__dates">Jan 2026 — Mar 2026</p>
           </div>
           <div class="history-item">
-            <p class="history-item__role">UI/UX Designer</p>
-            <p class="history-item__meta">CeroED Technologies</p>
+            <p class="history-item__role">Software Design Engineer — UX/UI</p>
+            <p class="history-item__meta">CeroED Technologies · 10+ multi-screen workflows and a
+              30-component design system</p>
             <p class="history-item__dates">Aug 2025 — Oct 2025</p>
           </div>
         </div>
@@ -317,11 +355,13 @@
           <h3 class="history__heading">Education</h3>
           <div class="history-item">
             <p class="history-item__role">Master of Computer Applications</p>
-            <p class="history-item__meta">Chandigarh University</p>
+            <p class="history-item__meta">Chandigarh University · 7.2 CGPA</p>
+            <p class="history-item__dates">2023 — 2025</p>
           </div>
           <div class="history-item">
             <p class="history-item__role">Bachelor of Computer Applications</p>
-            <p class="history-item__meta">Nitishwar College, Muzaffarpur</p>
+            <p class="history-item__meta">Nitishwar College, Muzaffarpur · 80.78%</p>
+            <p class="history-item__dates">2019 — 2022</p>
           </div>
         </div>
       </div>

@@ -76,17 +76,24 @@ too niche; a dark workbench theme — too crowded/dev-leaning).
 
 ```
 Portfolio_2026/
-├── index.html          # single page (case-study pages will be separate .html later)
+├── index.html          # the main single page
+├── work/               # case-study pages (static, NO JS — fast + robust)
+│   ├── k12-games.html  # flagship, NDA-safe (anonymized client work)
+│   ├── fintrack.html   # links to public Figma + GitHub repos
+│   ├── exaltride.html
+│   └── onebanc.html    # links to public Figma; next-links loop back to k12
 ├── context.md          # THIS FILE — keep updated
 ├── design.md           # design system: tokens, type, spacing, motion — keep updated
 ├── css/                # one file per section/concern
 │   ├── base.css        # tokens (:root), reset, shared primitives (.btn, .badge,
 │   │                   #   .section shell, [data-spec] tooltip, [data-reveal])
 │   ├── hero.css        # hero: two layers + seam + Figma-canvas chrome
-│   ├── work.css        # Selected Work rows
+│   ├── work.css        # Selected Work rows + "also explored" mini-list
 │   ├── playground.css  # Playground tiles + confetti toy styles
-│   ├── about.css       # About: bio, design/code split columns, experience
-│   └── contact.css     # Contact + footer
+│   ├── about.css       # About: bio, stats strip, design/code split, history
+│   ├── contact.css     # Contact + footer
+│   └── case.css        # case-study pages (work/*.html): nav bar, meta grid,
+│                       #   problem/approach duo, process cards, results, next-link
 ├── js/                 # one file per feature, all loaded with defer, no globals shared
 │   ├── seam.js         # hero seam drag (drives --seam CSS var)
 │   ├── reveal.js       # IntersectionObserver scroll-reveal for [data-reveal]
@@ -146,12 +153,14 @@ Portfolio_2026/
 1. **Hero** — "The Seam" (see §5). Nav lives inside both hero layers
    (links: Work / Playground / About / Contact + Resume button).
    ⚠️ Open question: no sticky nav after scrolling past the hero — revisit.
-2. **Work** (`#work`, `Frame 02`) — 4 case-study rows (no thumbnails yet):
-   K-12 game-based learning (flagship, anonymized per NDA), FinTrack (MERN),
-   ExaltRide (e-commerce ecosystem), OneBanc (wealth-management UX challenge).
-   Rows link to future case-study pages (hrefs are `#` placeholders).
-   Hover: dot-grid canvas fades in behind the row (design layer "peeking
-   through the paper").
+2. **Work** (`#work`, `Frame 02`) — 4 case-study rows (no thumbnails yet),
+   each linking to its page in `work/`: K-12 games (flagship, anonymized per
+   NDA), FinTrack (MERN), ExaltRide, OneBanc. Descriptions lead with metrics
+   (2+ games / 30+ screens / 20+ components — extracted from the old
+   portfolio repo `CodeWithPiyush0/PiyushUXPortfolio`, the canonical source
+   of the project data). Below the rows: an "Also explored" mini-list —
+   Spark (links to its public Figma) and WealthUp (no link, conversation
+   bait). Row hover: dot-grid canvas fades in behind the row.
 3. **Playground** (`#playground`, `Frame 03`) — where the game-feel lives.
    Big tile = placeholder slot for the **original demo game** (to be built
    from scratch, NDA-safe — this is the portfolio's future centerpiece).
@@ -177,10 +186,23 @@ CONFIRMED (by Piyush, Aug 2026):
   always reference with exact case; deployed host is case-sensitive).
 - Deployed on Vercel (Aug 2026).
 
+CONFIRMED VIA OLD PORTFOLIO REPO (github.com/CodeWithPiyush0/PiyushUXPortfolio —
+clone it for the canonical project data, `src/pages/CaseStudy.jsx` + `About.jsx`):
+- Titles: Direction Educare = "UI/UX Designer & Developer" · ExaltRide =
+  "UI/UX Designer (Intern)" · CeroED = "Software Design Engineer — UX/UI"
+  (an earlier version of this site had DE/CeroED titles swapped — fixed).
+- Education: MCA Chandigarh 2023–2025 (7.2 CGPA) · BCA Nitishwar 2019–2022 (80.78%).
+- Metrics used across the site: 2+ games, 6+ learning modules (DE) ·
+  13+ admin modules, 8+ vendor features, 30+ screens (ExaltRide) ·
+  10+ workflows, 30+ components (CeroED) · 20+ components (OneBanc).
+- Public artifact links: FinTrack Figma + fintrack-frontend/-backend GitHub
+  repos, OneBanc Figma, Spark Figma (all linked from case pages / work list).
+
 STILL DRAFT (mine, to workshop with Piyush):
-- Hero headline/tagline/sub, About bio.
-- Work row descriptions — rewrite in "build-log" voice for case pages.
-- ⚠️ ExaltRide title "UI/UX Designer" is my guess — confirm.
+- Hero headline/tagline/sub and About bio wording (facts are real now,
+  the voice hasn't been workshopped).
+- Case-page prose is my rewrite of the old portfolio's copy in first-person
+  build-log voice — Piyush should read and personalize.
 
 ## 8. Roadmap / open TODOs
 
@@ -197,16 +219,25 @@ STILL DRAFT (mine, to workshop with Piyush):
       fluid clamp(72px,14vw,120px); seam hit-area widens on coarse pointers.
       ⚠️ Headless can't render <500px windows — capture mobile via a 390px
       IFRAME wrapper page (see scratchpad technique) or test on a real phone.
+- [x] Case-study pages ×4 in `work/` (build-log voice; k12 NDA-safe)
+- [x] og:image (assets/og-image.png, seam-styled 1200×630, rendered like the
+      favicon) — ⚠️ **meta tag still has a RELATIVE path; needs the deployed
+      domain to become absolute or LinkedIn won't show it. ASK PIYUSH for the
+      Vercel URL.**
+- [x] Stats strip in About + metric-led work descriptions
 - [ ] Hero copy + bio: workshop real voice with Piyush
-- [ ] Case-study pages (separate HTML files, build-log format)
 - [ ] **Original demo game** for the Playground (from scratch, NDA-safe;
       subject TBD — avoid robots/batteries/number-splitting)
-- [ ] Real project thumbnails/artifacts for Work rows
-- [ ] og:image social preview picture (1200×630)
+- [ ] Real project thumbnails/artifacts for Work rows + case pages
 - [ ] Self-host fonts
-- [ ] Sticky/return nav decision
+- [ ] Sticky/return nav decision (case pages have one; index doesn't)
 - [ ] 404 page ("unmerged branch")
 - [ ] Real-device QA (iOS Safari especially — seam drag, 100dvh)
+- [ ] ⚠️ FLAGGED TO PIYUSH (Aug 2026): his personal GitHub publicly hosts
+      what look like CLIENT game repos (Bot-show-LBD-1/2, Game_Zone_LBD_1-3,
+      Trouble_in_treat_town_LBD1, Bot-Show-Flipbook + live Vercel deploys) —
+      likely an NDA problem; recommended making them private. The portfolio
+      must NOT link to any of them either way.
 
 ## 9. Verification workflow — use `?static`
 

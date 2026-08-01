@@ -154,7 +154,23 @@ the accent-blue seam (3.5/64 wide) with the round grip (r 8.5/64) and a white
 horizontal dash. PNG fallbacks: `favicon-32.png`, `apple-touch-icon.png`
 (180px). Regenerate from the SVG if colors ever change.
 
-## 9. Breakpoints
+## 9. Case-study pages (`css/case.css`)
+
+Static, no JS. Content column max-width 880px. Components: sticky `.case-nav`
+(blurred paper, back-link + logo + resume) · `.case__meta` 4-col definition
+grid · `.case__note` dashed NDA/info box · `.case__duo` problem (dashed wire
+border) vs approach (canvas dot-grid bg + accent left border) · `.case__cards`
+3-col process cards · `.case__results` with Figma corner-handle bullets ·
+`.case__next` big footer link. Labels: `Case Study · 0N`. All spans that must
+stack inside `<a>`/blocks need explicit `display: block` (bit us twice).
+
+## 10. Stats strip (About)
+
+4 columns (2 on ≤800px), each: 2px accent top border, big number
+(clamp 36–56px, 700), mono 12px muted label. Numbers must stay honest —
+they come from the old portfolio's verified project data (context.md §7).
+
+## 11. Breakpoints
 
 | Width | Change |
 |---|---|
@@ -168,7 +184,7 @@ Section padding is fluid: `clamp(72px, 14vw, 120px)`. Everything else scales
 via clamp()/percentages — avoid adding fixed-px breakpoint overrides unless a
 layout genuinely breaks.
 
-## 10. Voice & copy
+## 12. Voice & copy
 
 - First person, concrete, decision-focused ("I rebuilt the drag system three
   times" not "passionate about user-centric solutions").

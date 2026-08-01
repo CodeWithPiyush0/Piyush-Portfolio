@@ -1,0 +1,261 @@
+/* ============================================================
+   case.css — case-study pages (work/*.html)
+   Static pages, no JS: fast, robust, readable. Reuses base.css
+   tokens; layout echoes the main page's design-file voice.
+   ============================================================ */
+
+/* -- top bar -- */
+.case-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px var(--edge);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(27, 24, 19, 0.1);
+}
+
+.case-nav__back {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+.case-nav__back:hover { color: var(--accent); }
+
+.case-nav .nav__logo {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+/* -- page shell -- */
+.case {
+  padding: clamp(48px, 8vw, 96px) var(--edge) clamp(72px, 10vw, 120px);
+}
+
+.case__inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.case__title {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin-top: 16px;
+}
+
+.case__subtitle {
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 24px);
+  margin-top: 16px;
+}
+
+.case__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+/* -- meta grid (role / duration / platform / year) -- */
+.case__meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(27, 24, 19, 0.12);
+  border-bottom: 1px solid rgba(27, 24, 19, 0.12);
+}
+
+.case__meta dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.case__meta dd {
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* -- NDA / info note -- */
+.case__note {
+  margin-top: 40px;
+  padding: 20px 24px;
+  border: 1.5px dashed var(--wire);
+  border-radius: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.case__note strong { color: var(--ink); }
+
+/* -- sections -- */
+.case__section { margin-top: clamp(56px, 8vw, 88px); }
+
+.case__section h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.case__section p {
+  color: var(--muted);
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.7;
+  max-width: 720px;
+}
+.case__section p + p { margin-top: 16px; }
+
+/* -- problem / approach duo -- */
+.case__duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: clamp(56px, 8vw, 88px);
+}
+
+.case-block {
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.case-block--problem {
+  border: 1.5px dashed var(--wire);
+}
+.case-block--solution {
+  background: var(--canvas);
+  background-image: radial-gradient(var(--canvas-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-left: 3px solid var(--accent);
+}
+
+.case-block h3 {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.case-block--problem h3 { color: var(--muted); }
+
+.case-block p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* -- process cards -- */
+.case__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  border: 1px solid rgba(27, 24, 19, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.case-card__num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.case-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 12px 0 10px;
+}
+
+.case-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* -- results list (Figma corner-handle bullets) -- */
+.case__results {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.case__results li {
+  color: var(--muted);
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.6;
+  padding-left: 24px;
+  position: relative;
+}
+.case__results li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--accent);
+  background: #fff;
+}
+
+/* -- external links row -- */
+.case__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+/* -- next project -- */
+.case__next {
+  display: block;
+  margin-top: clamp(64px, 10vw, 112px);
+  padding-top: 32px;
+  border-top: 1px solid rgba(27, 24, 19, 0.12);
+}
+
+.case__next-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.case__next-title {
+  display: block;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 10px;
+  transition: color 0.2s ease;
+}
+.case__next:hover .case__next-title { color: var(--accent); }
+
+@media (max-width: 800px) {
+  .case__meta { grid-template-columns: repeat(2, 1fr); }
+  .case__duo { grid-template-columns: 1fr; }
+  .case__cards { grid-template-columns: 1fr; }
+}
