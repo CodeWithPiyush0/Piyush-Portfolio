@@ -239,7 +239,14 @@ CONFIRMED (by Piyush, Aug 2026):
   GitHub: github.com/CodeWithPiyush0
 - Resume: `assets/Piyush_Kumar_UX_Resume.pdf` (⚠️ mixed-case filename —
   always reference with exact case; deployed host is case-sensitive).
-- Deployed on Vercel (Aug 2026).
+- **Deployed at https://piyush-portfolio-new-six.vercel.app/** (confirmed
+  live Aug 2026; og:url + absolute og:image now point there). The OLD
+  portfolio still lives at piyush-ux-portfolio.vercel.app — ⚠️ suggest
+  taking it down or making it redirect once the new site fully replaces it.
+- Resume page-break rule: project headings carry KeepWithNext (Word COM
+  gotcha: booleans are $true/-1, NOT 1 — assigning 1 throws). Spark project
+  removed from the UX resume (Aug 2026); header title edited by Piyush to
+  "UI/UX Designer".
 
 CONFIRMED VIA OLD PORTFOLIO REPO (github.com/CodeWithPiyush0/PiyushUXPortfolio —
 clone it for the canonical project data, `src/pages/CaseStudy.jsx` + `About.jsx`):
@@ -291,9 +298,10 @@ STILL DRAFT (mine, to workshop with Piyush):
       from-scratch demo-game plan before Tray Trouble existed. Still valuable
       as the "first game where I own the learning design too" story + fresh
       portfolio content; build later if/when time allows. Spec stays current.
-- [ ] ⚠️ Frontend resume lists "The Invention Workshop (in development)" as a
-      project — either start that build or swap the entry for Tray Trouble
-      (live link!) before sending that resume out.
+- [x] Resumes' project sections (Aug 2026): Tray Trouble added to BOTH with
+      Play + Code links (replaced the "Invention Workshop (in development)"
+      entry on the frontend resume — flag resolved); FinTrack bullets now
+      carry the GitHub URL. Resume links are plain text (ATS-safe).
 - [ ] Real project thumbnails/artifacts for Work rows + case pages
 - [ ] Self-host fonts
 - [ ] Sticky/return nav decision (case pages have one; index doesn't)
