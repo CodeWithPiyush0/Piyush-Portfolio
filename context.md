@@ -78,10 +78,11 @@ too niche; a dark workbench theme — too crowded/dev-leaning).
 Portfolio_2026/
 ├── index.html          # the main single page
 ├── work/               # case-study pages (static, NO JS — fast + robust)
-│   ├── k12-games.html  # flagship, NDA-safe (anonymized client work)
-│   ├── fintrack.html   # links to public Figma + GitHub repos
-│   ├── exaltride.html
-│   └── onebanc.html    # links to public Figma; next-links loop back to k12
+│   ├── k12-games.html  # flagship, NDA-safe + Tray Trouble gallery/links
+│   ├── fintrack.html   # design figure + public Figma + GitHub links
+│   └── exaltride.html  # next-links chain loops k12 → fintrack → exaltride → k12
+│                       # (onebanc.html REMOVED at Piyush's request, Aug 2026 —
+│                       #  OneBanc is gone from the site entirely)
 ├── context.md          # THIS FILE — keep updated
 ├── design.md           # design system: tokens, type, spacing, motion — keep updated
 ├── css/                # one file per section/concern
@@ -154,9 +155,9 @@ Portfolio_2026/
 1. **Hero** — "The Seam" (see §5). Nav lives inside both hero layers
    (links: Work / Playground / About / Contact + Resume button).
    ⚠️ Open question: no sticky nav after scrolling past the hero — revisit.
-2. **Work** (`#work`, `Frame 02`) — 4 case-study rows (no thumbnails yet),
+2. **Work** (`#work`, `Frame 02`) — 3 case-study rows (no thumbnails yet),
    each linking to its page in `work/`: K-12 games (flagship, anonymized per
-   NDA), FinTrack (MERN), ExaltRide, OneBanc. Descriptions lead with metrics
+   NDA), FinTrack (MERN), ExaltRide. Descriptions lead with metrics
    (2+ games / 30+ screens / 20+ components — extracted from the old
    portfolio repo `CodeWithPiyush0/PiyushUXPortfolio`, the canonical source
    of the project data). Below the rows: an "Also explored" mini-list —
@@ -173,20 +174,22 @@ Portfolio_2026/
    Small tile = working confetti-button toy (js/confetti.js). Second small
    tile = wireframe "more experiments" placeholder.
 4. **Projects** (`#projects`, `Frame 04`) — TWO groups (per Piyush):
-   **Design** (cards link to public Figma files): Pocket Plan, Frenley
-   Dating App (= the project the old portfolio called "Spark"), FinTrack
-   design side (cross-links to its case page). Their shot areas are
-   PENDING-state placeholders (`.project-card__shot--pending`) until screens
-   are exported — ⚠️ blocked: the Figma MCP account (convegeniusai08@gmail.com)
-   has only VIEW access to these personal files; Piyush must share them as
-   CAN-EDIT to that email (or hand over exported PNGs). SpeedyMart (his
-   first college project) is ON HOLD until we can see it — include only if
-   it doesn't weaken the page. ⚠️ Pocket Plan card description is a GUESS —
-   confirm with Piyush.
-   **Development** (cards link live + GitHub, screenshots in
-   assets/projects/): FitTrack, 3D Solar System. (Healthcare Dashboard and
-   Sapna Studio were removed at Piyush's request — their jpgs remain in
-   assets/projects/, unreferenced.)
+   **Design** (cards link to public Figma files, real screenshots):
+   PocketPlan (personal budgeting WEB app — dashboard/transactions/budget/
+   calendar/reports) and Frenley Dating App (= the project the old portfolio
+   called "Spark"). Images were exported via the Figma MCP from nodes inside
+   the WORK file "Trouble-in-trat-town" (lvxL0z2g1KJBgdBbd1T5rT) where
+   Piyush parked copies — nodes 357:1011 (PocketPlan), 357:4338 (FinTrack
+   Main UI), 357:7094 (Frenley). The FinTrack design card was REMOVED as a
+   duplicate (it has a full case study) — its Figma dashboard render now
+   lives on work/fintrack.html as "The design side" figure
+   (assets/projects/fintrack-design.jpg). SpeedyMart (first college project)
+   still ON HOLD — personal file, no MCP access yet; include only if strong.
+   **Development** (cards link live + GitHub): FitTrack, 3D Solar System.
+   (Healthcare Dashboard + Sapna Studio removed at Piyush's request; their
+   jpgs remain unreferenced in assets/projects/.)
+   `.project-card__shot--pending` (dashed dot-grid placeholder) stays in
+   projects.css for future not-yet-exported cards.
 5. **About** (`#about`, `Frame 05`) — short bio + stats strip; skills split
    into two columns separated by a static seam line; experience + education.
 6. **Contact** (`#contact`, `Frame 06`) — big CTA heading, email button,
@@ -220,9 +223,10 @@ clone it for the canonical project data, `src/pages/CaseStudy.jsx` + `About.jsx`
 - Education: MCA Chandigarh 2023–2025 (7.2 CGPA) · BCA Nitishwar 2019–2022 (80.78%).
 - Metrics used across the site: 2+ games, 6+ learning modules (DE) ·
   13+ admin modules, 8+ vendor features, 30+ screens (ExaltRide) ·
-  10+ workflows, 30+ components (CeroED) · 20+ components (OneBanc).
+  10+ workflows, 30+ components (CeroED).
 - Public artifact links: FinTrack Figma + fintrack-frontend/-backend GitHub
-  repos, OneBanc Figma, Spark Figma (all linked from case pages / work list).
+  repos, Frenley Figma, Pocket_Plan Figma, Tray_trouble_game Figma.
+  (OneBanc was removed from the site entirely, Aug 2026.)
 
 STILL DRAFT (mine, to workshop with Piyush):
 - Hero headline/tagline/sub and About bio wording (facts are real now,

@@ -244,6 +244,8 @@
   margin-top: 8px;
 }
 
+.case__gallery--single { grid-template-columns: 1fr; }
+
 @media (max-width: 640px) {
   .case__gallery { grid-template-columns: 1fr; }
 }
