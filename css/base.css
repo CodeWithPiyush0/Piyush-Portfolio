@@ -78,6 +78,35 @@ button { font: inherit; background: none; border: 0; cursor: pointer; }
   border: 1.5px solid var(--ink);
 }
 
+/* -- logo: the seam monogram (outlined P | seam | solid K) -- */
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.logo__char--p {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--ink);
+}
+
+.logo__seam {
+  width: 2px;
+  height: 20px;
+  border-radius: 1px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(13, 153, 255, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.nav__logo:hover .logo__seam {
+  transform: scaleY(1.25);
+}
+
 /* -- spec tooltip: any element with data-spec documents itself on hover -- */
 [data-spec] { position: relative; }
 [data-spec]::after {

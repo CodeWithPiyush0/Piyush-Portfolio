@@ -146,6 +146,19 @@ lesson carried over from the game project). Everything must respect
 motion is JS-driven; also forces `scroll-behavior: auto`). `?static` in the
 URL disables all entrance motion (screenshot/test mode — see context.md §9).
 
+## 7b. Logo & name treatment
+
+- **Logo (`.nav__logo`, base.css — shared by index + case pages):** the seam
+  monogram — outlined "P" (`-webkit-text-stroke` 1.5px ink, transparent
+  fill) | 2px accent seam bar (glow shadow, scaleY 1.25 on hover) | solid
+  "K". Space Grotesk 700 22px. Design-layer skin: strokes/fills go
+  wire-text, seam keeps accent but loses glow.
+- **Hero name:** `<span.title__solid>Piyush</span> <span.title__outline>
+  Kumar</span><span.title__dot>.</span>` — solid first name, outlined last
+  name (stroke 0.035em), accent full stop. The duality written into the
+  type. Live h1 carries a `data-spec` tooltip with its own type specs.
+  ⚠️ Both hero layers use IDENTICAL span markup (layer geometry rule).
+
 ## 8. Favicon / brand mark
 
 `assets/favicon.svg` — the seam motif as an icon: rounded square (rx 14/64),

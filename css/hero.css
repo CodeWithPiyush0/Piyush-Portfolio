@@ -46,12 +46,7 @@
   flex-shrink: 0;
 }
 
-.nav__logo {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.05em;
-}
+/* .nav__logo is a shared component — see base.css */
 
 .nav__links {
   display: flex;
@@ -137,6 +132,14 @@
 .layer--live .hero__tag  { color: var(--accent); }
 .layer--live .hero__sub  { color: var(--muted); }
 
+/* name treatment: solid first name, outlined last name, accent full stop —
+   the design/code duality written into the type itself */
+.layer--live .title__outline {
+  color: transparent;
+  -webkit-text-stroke: 0.035em var(--ink);
+}
+.layer--live .title__dot { color: var(--accent); }
+
 /* spec tooltip is global now — see base.css [data-spec] */
 
 .hero__hint {
@@ -161,6 +164,15 @@
 .layer--design .hero__title { color: var(--wire-text); }
 .layer--design .hero__tag,
 .layer--design .hero__sub   { color: var(--wire-text); }
+
+.layer--design .title__outline {
+  color: transparent;
+  -webkit-text-stroke: 0.035em var(--wire-text);
+}
+.layer--design .title__dot { color: var(--wire-text); }
+.layer--design .logo__char--p { -webkit-text-stroke-color: var(--wire-text); }
+.layer--design .logo__char--k { color: var(--wire-text); }
+.layer--design .logo__seam { box-shadow: none; }
 
 .layer--design .btn--primary {
   background: transparent;

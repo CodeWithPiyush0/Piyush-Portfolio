@@ -27,12 +27,7 @@
 }
 .case-nav__back:hover { color: var(--accent); }
 
-.case-nav .nav__logo {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.05em;
-}
+/* .nav__logo is a shared component — see base.css */
 
 /* -- page shell -- */
 .case {
