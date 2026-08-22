@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In-App Visual QA Tool — Piyush Kumar</title>
+  <meta name="description" content="Case study: a drop-in visual QA and bug-reporting tool — pin structured bug reports directly on a live build. Vanilla JS + Supabase, no build step." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/work.css" />
+  <link rel="stylesheet" href="../css/case.css" />
+</head>
+<body>
+
+  <header class="case-nav">
+    <a class="case-nav__back" href="../index.html#work">← back to work</a>
+    <a class="nav__logo" href="../index.html">PK</a>
+    <a class="btn btn--small" href="../assets/Piyush_Kumar_UX_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+  </header>
+
+  <main class="case">
+    <div class="case__inner">
+      <p class="section__label">Case Study · 02</p>
+      <h1 class="case__title">In-App Visual QA Tool</h1>
+      <p class="case__subtitle">Pin a bug report exactly where you see it — a drop-in, browser-based QA tool that replaced hand-maintained bug spreadsheets.</p>
+
+      <div class="case__tags">
+        <span class="work-tag">Dev tooling</span>
+        <span class="work-tag">Design → Code</span>
+        <span class="work-tag">Full stack</span>
+        <span class="work-tag work-tag--nda">client work · anonymized</span>
+      </div>
+
+      <dl class="case__meta">
+        <div><dt>Role</dt><dd>Designer &amp; Developer (solo)</dd></div>
+        <div><dt>Year</dt><dd>2026</dd></div>
+        <div><dt>Platform</dt><dd>Web · drop-in module</dd></div>
+        <div><dt>Stack</dt><dd>Vanilla JS · Supabase</dd></div>
+      </dl>
+
+      <p class="case__note">
+        Built during the same engagement as my
+        <a href="k12-games.html"><strong>K–12 game work</strong></a> — I created
+        this tool to fix the QA workflow of the very games I was building.
+        Anonymized here like the games; the engineering is the story.
+      </p>
+
+      <section class="case__section">
+        <h2>Overview</h2>
+        <p>
+          A browser-based QA tool that lets testers and reviewers click any
+          element on a live build to pin a bug or comment exactly where they
+          see it. Every pin carries a structured, exportable bug report backed
+          by a shared database — and the whole tool is one self-contained
+          folder that drops into any web project.
+        </p>
+      </section>
+
+      <div class="case__duo">
+        <div class="case-block case-block--problem">
+          <h3>The problem</h3>
+          <p>
+            QA for our games lived in a hand-maintained spreadsheet. Every bug
+            row had to be cross-referenced back to the actual spot in the
+            running game — slow, error-prone, and the context ("which screen?
+            which button?") kept getting lost between tester and developer.
+            I was on the receiving end of those bug reports, so I felt the
+            friction directly.
+          </p>
+        </div>
+        <div class="case-block case-block--solution">
+          <h3>The approach</h3>
+          <p>
+            Move bug reporting into the running product. Toggle comment mode,
+            click the broken thing, fill a structured form — the pin captures
+            the element's CSS selector, coordinates, and the active screen
+            automatically. The bug sheet everyone used to maintain by hand
+            becomes a one-click CSV export.
+          </p>
+        </div>
+      </div>
+
+      <section class="case__section">
+        <h2>How it works</h2>
+        <div class="case__cards">
+          <div class="case-card">
+            <span class="case-card__num">01</span>
+            <h3>Pin it where you see it</h3>
+            <p>Click any UI element to drop a numbered pin. Each pin captures
+            the CSS selector, x/y position, and auto-detected screen — anyone
+            can jump straight to the issue. A collapsible sidebar lists pins
+            per screen with status filters.</p>
+          </div>
+          <div class="case-card">
+            <span class="case-card__num">02</span>
+            <h3>Role-aware reporting</h3>
+            <p>Three password-gated roles. QA gets a proper bug form
+            (description, repro steps, expected vs actual); stakeholders get
+            a lightweight comment box; the owner reviews everything. Threaded
+            replies turn each pin into a conversation.</p>
+          </div>
+          <div class="case-card">
+            <span class="case-card__num">03</span>
+            <h3>Dual-status workflow</h3>
+            <p>QA owns Pass/Fail (built for the retest loop); the developer
+            owns Open → In&nbsp;Progress → Resolved / Won't&nbsp;Fix (reason
+            required). Permissions are enforced in the UI <em>and</em> on the
+            server — mirroring a real bug-tracking pipeline.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case__section">
+        <h2>The engineering</h2>
+        <ul class="case__results">
+          <li>Frontend is vanilla JavaScript ES modules + CSS — no framework,
+              no build step; clean module separation (data layer, popup UI,
+              sidebar, CSV export, mode controller), each independently
+              testable</li>
+          <li>Backend on Supabase: PostgreSQL with Row-Level Security, plus a
+              Deno Edge Function as the security gatekeeper — all privileged
+              mutations route through password-validated, server-side checks
+              with column whitelisting; secrets never touch the client</li>
+          <li>One-click CSV "bug sheet" — role-scoped columns, properly
+              escaped, UTF-8 BOM so it opens cleanly in Excel/Sheets, with a
+              timestamped project-named filename</li>
+          <li>Reusable by design: one folder, namespaced per app, so many
+              projects share one backend without collisions — integrating a
+              new project is config-only, ~20 minutes with the setup guide</li>
+          <li>Production-safe: activates only with <code>?qa=true</code> in
+              the URL — completely inert (zero UI, zero cost) for real users,
+              fully removable by deleting one folder and one script tag</li>
+        </ul>
+      </section>
+
+      <section class="case__section">
+        <h2>What it changed</h2>
+        <ul class="case__results">
+          <li>Bug reports moved from a manual spreadsheet into the product
+              itself — pinned in context, structured, and screen-tagged</li>
+          <li>The tester's documentation kept its familiar spreadsheet form —
+              now generated on demand instead of maintained by hand</li>
+          <li>QA, developer, and stakeholders collaborate on the same pins in
+              real time, across sessions and devices</li>
+          <li>Adopted across multiple projects from a single shared backend</li>
+        </ul>
+      </section>
+
+      <a class="case__next" href="fintrack.html">
+        <span class="case__next-label">next case study</span>
+        <span class="case__next-title">FinTrack — personal finance dashboard →</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Piyush Kumar — designed &amp; built by hand.</p>
+    <p class="footer__mono">no frameworks · no templates · view source</p>
+  </footer>
+
+</body>
+</html>

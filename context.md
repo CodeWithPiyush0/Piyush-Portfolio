@@ -79,10 +79,16 @@ Portfolio_2026/
 ├── index.html          # the main single page
 ├── work/               # case-study pages (static, NO JS — fast + robust)
 │   ├── k12-games.html  # flagship, NDA-safe + Tray Trouble gallery/links
+│   ├── qa-tool.html    # In-App Visual QA Tool — built for the SAME client/
+│   │                   #   engagement as the K-12 games, to QA those games
+│   │                   #   (pages cross-link both ways; never name the client).
+│   │                   #   Vanilla JS + Supabase/RLS/Edge Function; no images
+│   │                   #   yet; ⚠️ tool code is CLIENT work-product: do NOT
+│   │                   #   publish code or a public demo without the same
+│   │                   #   permission as Tray Trouble
 │   ├── fintrack.html   # design figure + public Figma + GitHub links
-│   └── exaltride.html  # next-links chain loops k12 → fintrack → exaltride → k12
-│                       # (onebanc.html REMOVED at Piyush's request, Aug 2026 —
-│                       #  OneBanc is gone from the site entirely)
+│   └── exaltride.html  # chain: k12 → qa-tool → fintrack → exaltride → k12
+│                       # (onebanc.html REMOVED at Piyush's request, Aug 2026)
 ├── context.md          # THIS FILE — keep updated
 ├── design.md           # design system: tokens, type, spacing, motion — keep updated
 ├── css/                # one file per section/concern
@@ -155,9 +161,12 @@ Portfolio_2026/
 1. **Hero** — "The Seam" (see §5). Nav lives inside both hero layers
    (links: Work / Playground / About / Contact + Resume button).
    ⚠️ Open question: no sticky nav after scrolling past the hero — revisit.
-2. **Work** (`#work`, `Frame 02`) — 3 case-study rows (no thumbnails yet),
+2. **Work** (`#work`, `Frame 02`) — 4 case-study rows (no thumbnails yet),
    each linking to its page in `work/`: K-12 games (flagship, anonymized per
-   NDA), FinTrack (MERN), ExaltRide. Descriptions lead with metrics
+   NDA), In-App Visual QA Tool (client work, anonymized — added Aug 2026,
+   full feature/architecture data from Piyush is in that page + both resumes
+   got a DE bullet for it), FinTrack (MERN), ExaltRide. Descriptions lead
+   with metrics
    (2+ games / 30+ screens / 20+ components — extracted from the old
    portfolio repo `CodeWithPiyush0/PiyushUXPortfolio`, the canonical source
    of the project data). Below the rows: an "Also explored" mini-list —
