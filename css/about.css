@@ -116,6 +116,27 @@
   background: #fff; /* Figma corner-handle bullet */
 }
 
+/* -- toolbox: scannable tool chips -- */
+.about__toolbox {
+  margin-top: 88px;
+}
+
+.toolbox__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.toolbox__sublabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 24px;
+}
+
 /* -- experience & education -- */
 .about__history {
   margin-top: 88px;

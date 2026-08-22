@@ -169,8 +169,14 @@ Portfolio_2026/
    **Permission situation (Aug 2026):** Piyush's team lead VERBALLY approved
    reusing one of his shipped work games with the character changed; he built
    the reskin ("Tray Trouble", candy-chef mascot, was "Trouble in Treat Town").
-   ⚠️ Advise getting that permission IN WRITING (one email/WhatsApp line);
-   until then the site says "shared with permission" and shows no client name.
+   **Public framing (Piyush's decision, Aug 2026):** the site does NOT mention
+   the work/DE origin — Tray Trouble is presented neutrally as "a learning
+   game I designed and built end-to-end" (TRUE — he did design and build it;
+   the site simply omits provenance). ⚠️ NEVER escalate the public claim to
+   "personal project built from scratch on my own time" — that's inaccurate
+   and would UNDERMINE the permission defense. ⚠️ The written permission from
+   the team lead is now MORE important, not less — it's the private proof
+   that publishing the game is authorized. Keep chasing it.
    Small tile = working confetti-button toy (js/confetti.js). Second small
    tile = wireframe "more experiments" placeholder.
 4. **Projects** (`#projects`, `Frame 04`) — TWO groups (per Piyush):
@@ -191,7 +197,9 @@ Portfolio_2026/
    `.project-card__shot--pending` (dashed dot-grid placeholder) stays in
    projects.css for future not-yet-exported cards.
 5. **About** (`#about`, `Frame 05`) — short bio + stats strip; skills split
-   into two columns separated by a static seam line; experience + education.
+   into two columns separated by a static seam line; **Toolbox** (scannable
+   tool chips: design/code tools row + "ai stack" row — mirrors the resumes'
+   AI & Prompting line); experience + education.
 6. **Contact** (`#contact`, `Frame 06`) — big CTA heading, email button,
    LinkedIn/GitHub links, resume. Footer: "Designed & built by hand."
 
@@ -221,9 +229,12 @@ clone it for the canonical project data, `src/pages/CaseStudy.jsx` + `About.jsx`
   "UI/UX Designer (Intern)" · CeroED = "Software Design Engineer — UX/UI"
   (an earlier version of this site had DE/CeroED titles swapped — fixed).
 - Education: MCA Chandigarh 2023–2025 (7.2 CGPA) · BCA Nitishwar 2019–2022 (80.78%).
-- Metrics used across the site: 2+ games, 6+ learning modules (DE) ·
-  13+ admin modules, 8+ vendor features, 30+ screens (ExaltRide) ·
-  10+ workflows, 30+ components (CeroED).
+- Metrics used across the site (UPDATED by Piyush, Aug 2026): **4+ games,
+  2+ interactive story flipbooks** (DE — a flipbook is the end product: a
+  complete story with games woven in; replaces the old "2+ games, 6+
+  modules" everywhere, including both resumes) · 13+ admin modules, 8+
+  vendor features, 30+ screens (ExaltRide) · 10+ workflows, 30+ components
+  (CeroED).
 - Public artifact links: FinTrack Figma + fintrack-frontend/-backend GitHub
   repos, Frenley Figma, Pocket_Plan Figma, Tray_trouble_game Figma.
   (OneBanc was removed from the site entirely, Aug 2026.)
