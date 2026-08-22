@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/work.css" />
   <link rel="stylesheet" href="css/playground.css" />
+  <link rel="stylesheet" href="css/projects.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="stylesheet" href="css/contact.css" />
 </head>
@@ -47,6 +48,7 @@
         <nav class="nav__links">
           <a href="#work">Work</a>
           <a href="#playground">Playground</a>
+          <a href="#projects">Projects</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -79,6 +81,7 @@
         <nav class="nav__links">
           <a href="#">Work</a>
           <a href="#">Playground</a>
+          <a href="#">Projects</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
         </nav>
@@ -214,11 +217,6 @@
       <div class="work__more" data-reveal>
         <h3 class="work__more-heading">Also explored</h3>
         <p class="work__more-item">
-          <a href="https://www.figma.com/design/caz72Q9IaJObwbHk8xsn9q/Frenley-Assignment"
-             target="_blank" rel="noopener"><strong>Spark</strong> — premium dating experience:
-          freemium subscription flow + core social screens (Figma ↗)</a>
-        </p>
-        <p class="work__more-item">
           <strong>WealthUp</strong> — gamified investing for first-time investors:
           learn-to-earn onboarding, progressive disclosure, copy-trading — ask me about it
         </p>
@@ -241,16 +239,20 @@
       </p>
 
       <div class="playground__grid">
-        <div class="pg-tile pg-tile--game" data-reveal>
-          <span class="pg-tile__label">playground / demo-game.html</span>
-          <span class="pg-tile__badge">in production</span>
-          <div class="pg-play">▶</div>
-          <h3 class="pg-tile__title">An original learning game — playable here soon</h3>
-          <p class="pg-tile__note">
-            A small educational game for kids, built from scratch for this
-            portfolio — every mechanic, sprite and line of code my own.
-          </p>
-        </div>
+        <a class="pg-tile pg-tile--game" href="https://tray-trouble.vercel.app"
+           target="_blank" rel="noopener" data-reveal
+           aria-label="Play Tray Trouble — a learning game for kids">
+          <span class="pg-tile__label">playground / tray-trouble</span>
+          <span class="pg-tile__badge">live · tap to play</span>
+          <span class="pg-game__caption">
+            <span class="pg-tile__title">Tray Trouble</span>
+            <span class="pg-tile__note">
+              A complete learning game for kids — mechanics, feedback systems,
+              audio, art and code. One of my shipped games, reskinned with a new
+              character and shared with permission.
+            </span>
+          </span>
+        </a>
 
         <div class="pg-tile pg-tile--confetti" data-reveal="1">
           <span class="pg-tile__label">playground / confetti.js</span>
@@ -270,12 +272,134 @@
   </section>
 
   <!-- ============================================================
+       PROJECTS — personal side projects, image-led cards
+       (case-study-worthy work lives in #work; this is the shelf)
+       ============================================================ -->
+  <section class="section projects" id="projects">
+    <div class="section__inner">
+      <p class="section__label" data-reveal>Frame 04 · Projects</p>
+      <h2 class="section__title" data-reveal="1">Projects</h2>
+      <p class="section__intro" data-reveal="2">
+        Side projects from both sides of the seam — design explorations you
+        can open in Figma, and builds you can use live.
+      </p>
+
+      <h3 class="projects__group-heading" data-reveal>Design — open the Figma files</h3>
+      <div class="projects__grid">
+        <div class="project-card" data-reveal>
+          <a class="project-card__main" href="https://www.figma.com/design/1xwe7i1PNH2SHGjevreEBk/Pocket_Plan?node-id=67-2368" target="_blank" rel="noopener">
+            <span class="project-card__shot project-card__shot--pending">
+              <span>screens on the way</span>
+            </span>
+            <span class="project-card__title">Pocket Plan</span>
+            <span class="project-card__desc">
+              Mobile app concept — complete end-to-end UI designed in Figma.
+            </span>
+          </a>
+          <div class="project-card__meta">
+            <span class="work-tag">UI/UX</span>
+            <span class="work-tag">Mobile</span>
+            <span class="project-card__links">
+              <a href="https://www.figma.com/design/1xwe7i1PNH2SHGjevreEBk/Pocket_Plan?node-id=67-2368" target="_blank" rel="noopener">figma ↗</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal="1">
+          <a class="project-card__main" href="https://www.figma.com/design/caz72Q9IaJObwbHk8xsn9q/Frenley-Dating-App" target="_blank" rel="noopener">
+            <span class="project-card__shot project-card__shot--pending">
+              <span>screens on the way</span>
+            </span>
+            <span class="project-card__title">Frenley — Dating App</span>
+            <span class="project-card__desc">
+              Premium dating experience — freemium-to-paid subscription flow,
+              onboarding, discovery and profile screens on one design system.
+            </span>
+          </a>
+          <div class="project-card__meta">
+            <span class="work-tag">UI/UX</span>
+            <span class="work-tag">Mobile</span>
+            <span class="project-card__links">
+              <a href="https://www.figma.com/design/caz72Q9IaJObwbHk8xsn9q/Frenley-Dating-App" target="_blank" rel="noopener">figma ↗</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal>
+          <a class="project-card__main" href="https://www.figma.com/design/kr1OZVLrmAlG4oQtK6D4wj/FinTrack?node-id=175-2564" target="_blank" rel="noopener">
+            <span class="project-card__shot project-card__shot--pending">
+              <span>screens on the way</span>
+            </span>
+            <span class="project-card__title">FinTrack — the design side</span>
+            <span class="project-card__desc">
+              Where the FinTrack build started: 5 core user flows, 15+
+              high-fidelity screens, and a 20+ component library.
+            </span>
+          </a>
+          <div class="project-card__meta">
+            <span class="work-tag">UI/UX</span>
+            <span class="work-tag">Design system</span>
+            <span class="project-card__links">
+              <a href="https://www.figma.com/design/kr1OZVLrmAlG4oQtK6D4wj/FinTrack?node-id=175-2564" target="_blank" rel="noopener">figma ↗</a>
+              <a href="work/fintrack.html">case study →</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="projects__group-heading projects__group-heading--dev" data-reveal>Development — use the live builds</h3>
+      <div class="projects__grid">
+        <div class="project-card" data-reveal>
+          <a class="project-card__main" href="https://fittrack-dashboard.vercel.app" target="_blank" rel="noopener">
+            <span class="project-card__shot">
+              <img src="assets/projects/pj-fittrack.jpg" alt="FitTrack — dark fitness dashboard with progress rings and workout insights" loading="lazy" />
+            </span>
+            <span class="project-card__title">FitTrack</span>
+            <span class="project-card__desc">
+              Fitness analytics dashboard — daily progress rings, key metrics,
+              and workout insights over time.
+            </span>
+          </a>
+          <div class="project-card__meta">
+            <span class="work-tag">React</span>
+            <span class="work-tag">Data viz</span>
+            <span class="project-card__links">
+              <a href="https://fittrack-dashboard.vercel.app" target="_blank" rel="noopener">live ↗</a>
+              <a href="https://github.com/CodeWithPiyush0/fittrack-dashboard" target="_blank" rel="noopener">code ↗</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal="1">
+          <a class="project-card__main" href="https://solar-system-3d-wheat.vercel.app" target="_blank" rel="noopener">
+            <span class="project-card__shot">
+              <img src="assets/projects/pj-solar.jpg" alt="Interactive 3D solar system with orbit controls and per-planet speed sliders" loading="lazy" />
+            </span>
+            <span class="project-card__title">3D Solar System</span>
+            <span class="project-card__desc">
+              Interactive 3D solar system — orbit camera, zoom, and
+              per-planet speed controls, running in the browser.
+            </span>
+          </a>
+          <div class="project-card__meta">
+            <span class="work-tag">Three.js</span>
+            <span class="work-tag">3D</span>
+            <span class="project-card__links">
+              <a href="https://solar-system-3d-wheat.vercel.app" target="_blank" rel="noopener">live ↗</a>
+              <a href="https://github.com/CodeWithPiyush0/solar-system-3d" target="_blank" rel="noopener">code ↗</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        ABOUT — bio + the design/code split + history
-       ⚠️ dates & titles are UNCONFIRMED placeholders — see context.md §7
        ============================================================ -->
   <section class="section about" id="about">
     <div class="section__inner">
-      <p class="section__label" data-reveal>Frame 04 · About</p>
+      <p class="section__label" data-reveal>Frame 05 · About</p>
       <h2 class="section__title" data-reveal="1">About</h2>
 
       <p class="about__bio" data-reveal="2">
@@ -374,7 +498,7 @@
        ============================================================ -->
   <section class="section contact" id="contact">
     <div class="section__inner">
-      <p class="section__label" data-reveal>Frame 05 · Contact</p>
+      <p class="section__label" data-reveal>Frame 06 · Contact</p>
       <h2 class="contact__title" data-reveal="1">Let's build<br />something.</h2>
       <p class="contact__sub" data-reveal="2">
         Open to product designer, design engineer and frontend roles —

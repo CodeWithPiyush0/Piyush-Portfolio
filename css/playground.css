@@ -52,26 +52,50 @@
   max-width: 440px;
 }
 
-/* -- big tile: the future demo game -- */
+/* -- big tile: Tray Trouble (live game, links out) -- */
 .pg-tile--game {
   grid-column: span 2;
-  background: var(--paper);
-  border: 1.5px dashed var(--accent);
+  background: #2a1608 url("../assets/tray-trouble.jpg") center / cover no-repeat;
+  border: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.pg-tile--game .pg-play {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
+/* legibility veil behind the caption */
+.pg-tile--game::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(30, 14, 4, 0.88));
+  pointer-events: none;
+}
+
+.pg-tile--game:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(30, 14, 4, 0.35);
+}
+
+.pg-game__caption {
+  position: relative;
+  z-index: 1;
+}
+
+.pg-tile--game .pg-tile__title { color: #fff; display: block; }
+.pg-tile--game .pg-tile__note  { color: rgba(255, 255, 255, 0.82); display: block; }
+
+.pg-tile--game .pg-tile__label {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(30, 14, 4, 0.55);
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.pg-tile--game .pg-tile__badge {
   background: var(--accent);
+  border: none;
   color: #fff;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 5px; /* optical centering of ▶ */
-  margin-bottom: 24px;
-  box-shadow: 0 4px 16px rgba(13, 153, 255, 0.4);
+  z-index: 1;
 }
 
 .pg-tile__badge {

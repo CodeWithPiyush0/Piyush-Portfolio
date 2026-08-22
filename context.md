@@ -90,6 +90,7 @@ Portfolio_2026/
 │   ├── hero.css        # hero: two layers + seam + Figma-canvas chrome
 │   ├── work.css        # Selected Work rows + "also explored" mini-list
 │   ├── playground.css  # Playground tiles + confetti toy styles
+│   ├── projects.css    # Personal Projects image cards (#projects)
 │   ├── about.css       # About: bio, stats strip, design/code split, history
 │   ├── contact.css     # Contact + footer
 │   └── case.css        # case-study pages (work/*.html): nav bar, meta grid,
@@ -162,16 +163,41 @@ Portfolio_2026/
    Spark (links to its public Figma) and WealthUp (no link, conversation
    bait). Row hover: dot-grid canvas fades in behind the row.
 3. **Playground** (`#playground`, `Frame 03`) — where the game-feel lives.
-   Big tile = placeholder slot for the **original demo game** (to be built
-   from scratch, NDA-safe — this is the portfolio's future centerpiece).
+   Big tile = **Tray Trouble** (assets/tray-trouble.jpg thumbnail, links out to
+   https://tray-trouble.vercel.app + repo github.com/CodeWithPiyush0/Tray_trouble).
+   **Permission situation (Aug 2026):** Piyush's team lead VERBALLY approved
+   reusing one of his shipped work games with the character changed; he built
+   the reskin ("Tray Trouble", candy-chef mascot, was "Trouble in Treat Town").
+   ⚠️ Advise getting that permission IN WRITING (one email/WhatsApp line);
+   until then the site says "shared with permission" and shows no client name.
    Small tile = working confetti-button toy (js/confetti.js). Second small
    tile = wireframe "more experiments" placeholder.
-4. **About** (`#about`, `Frame 04`) — short bio; skills split into two
-   columns ("Design side" / "Code side") separated by a static seam line;
-   experience + education list.
-5. **Contact** (`#contact`, `Frame 05`) — big CTA heading, email button,
-   LinkedIn/GitHub links, resume. Footer: "Designed & built by hand — no
-   frameworks, no templates."
+4. **Projects** (`#projects`, `Frame 04`) — TWO groups (per Piyush):
+   **Design** (cards link to public Figma files): Pocket Plan, Frenley
+   Dating App (= the project the old portfolio called "Spark"), FinTrack
+   design side (cross-links to its case page). Their shot areas are
+   PENDING-state placeholders (`.project-card__shot--pending`) until screens
+   are exported — ⚠️ blocked: the Figma MCP account (convegeniusai08@gmail.com)
+   has only VIEW access to these personal files; Piyush must share them as
+   CAN-EDIT to that email (or hand over exported PNGs). SpeedyMart (his
+   first college project) is ON HOLD until we can see it — include only if
+   it doesn't weaken the page. ⚠️ Pocket Plan card description is a GUESS —
+   confirm with Piyush.
+   **Development** (cards link live + GitHub, screenshots in
+   assets/projects/): FitTrack, 3D Solar System. (Healthcare Dashboard and
+   Sapna Studio were removed at Piyush's request — their jpgs remain in
+   assets/projects/, unreferenced.)
+5. **About** (`#about`, `Frame 05`) — short bio + stats strip; skills split
+   into two columns separated by a static seam line; experience + education.
+6. **Contact** (`#contact`, `Frame 06`) — big CTA heading, email button,
+   LinkedIn/GitHub links, resume. Footer: "Designed & built by hand."
+
+Case-page extra: `work/k12-games.html` has a 2×2 **Tray Trouble gallery**
+(`assets/game/*.jpg`, captured from the live game via its `#N` hash deep
+links — FLOW index; e.g. #4 top view, #5 tutorial, #12 level) + buttons:
+Play / **public Figma file** (Tray_trouble_game, nusnrquk5KE91XFymSqwl2) /
+GitHub. ⚠️ The ORIGINAL client Figma ("Trouble in trat town") must never be
+linked publicly — only the public Tray_trouble_game copy.
 
 ## 7. Copy & data status
 
@@ -226,8 +252,15 @@ STILL DRAFT (mine, to workshop with Piyush):
       Vercel URL.**
 - [x] Stats strip in About + metric-led work descriptions
 - [ ] Hero copy + bio: workshop real voice with Piyush
-- [ ] **Original demo game** for the Playground (from scratch, NDA-safe;
-      subject TBD — avoid robots/batteries/number-splitting)
+- [x] **Playable game in the Playground**: solved by **Tray Trouble** (see §6.3)
+      — a permitted reskin of shipped work, live + linked from the k12 case page.
+- [ ] "The Invention Workshop" (`game-spec.md`) — **PARKED, optional**: was the
+      from-scratch demo-game plan before Tray Trouble existed. Still valuable
+      as the "first game where I own the learning design too" story + fresh
+      portfolio content; build later if/when time allows. Spec stays current.
+- [ ] ⚠️ Frontend resume lists "The Invention Workshop (in development)" as a
+      project — either start that build or swap the entry for Tray Trouble
+      (live link!) before sending that resume out.
 - [ ] Real project thumbnails/artifacts for Work rows + case pages
 - [ ] Self-host fonts
 - [ ] Sticky/return nav decision (case pages have one; index doesn't)

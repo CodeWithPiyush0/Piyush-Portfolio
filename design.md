@@ -164,6 +164,16 @@ border) vs approach (canvas dot-grid bg + accent left border) · `.case__cards`
 `.case__next` big footer link. Labels: `Case Study · 0N`. All spans that must
 stack inside `<a>`/blocks need explicit `display: block` (bit us twice).
 
+## 9b. Image cards & galleries
+
+- **Project cards** (`css/projects.css`): 2-col grid (1 on ≤800px), 16/10
+  image in a 16px-radius hairline-bordered frame, image scales 1.03 on hover,
+  title flips to accent. Card body = link to the live site; meta row has
+  tags + mono `live ↗ / code ↗` links.
+- **Case gallery** (`.case__gallery`): 2×2 (1-col ≤640px), 12px radius,
+  mono 11px figcaptions. Screenshots are 960px-wide JPEG q82 (~50–80KB each,
+  System.Drawing pipeline — see context.md §9 workflow).
+
 ## 10. Stats strip (About)
 
 4 columns (2 on ≤800px), each: 2px accent top border, big number
