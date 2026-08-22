@@ -209,8 +209,17 @@ Portfolio_2026/
    into two columns separated by a static seam line; **Toolbox** (scannable
    tool chips: design/code tools row + "ai stack" row — mirrors the resumes'
    AI & Prompting line); experience + education.
-6. **Contact** (`#contact`, `Frame 06`) — big CTA heading, email button,
+6. **Contact** (`#contact`, `Frame 06`) — big CTA heading, mailto button,
+   **click-to-copy email** (js/copy-email.js — DECISION: no contact form;
+   static site + forms = spam/service dependency, recruiters use email/
+   LinkedIn; copy-to-clipboard solves the mailto friction instead),
    LinkedIn/GitHub links, resume. Footer: "Designed & built by hand."
+
+Work vs Projects rule (decided Aug 2026, after Piyush asked if it was
+confusing): **Work = four deep-dive case studies · Projects = the quick
+shelf (open, click, no reading)**. Both section intros state this rule and
+Work's intro links down to #projects. The "Also explored" (WealthUp) line
+lives at the END of #projects, not in #work.
 
 Case-page extra: `work/k12-games.html` has a 2×2 **Tray Trouble gallery**
 (`assets/game/*.jpg`, captured from the live game via its `#N` hash deep
